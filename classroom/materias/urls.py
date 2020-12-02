@@ -1,7 +1,7 @@
-from django.urls import path
-from .views import ViewMateria, MateriaView
+from .views import MateriaView
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('', ViewMateria),
-    path('<materia_id>', MateriaView)
-]
+router = DefaultRouter()
+router.register(r'', MateriaView)
+
+urlpatterns = router.urls

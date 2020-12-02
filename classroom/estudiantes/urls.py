@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import ViewEstudiante, EstudianteView
+from .views import EstudianteView
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('', ViewEstudiante),
-    path('<estudiante_id>/', EstudianteView)
-]
+router = DefaultRouter()
+router.register(r'', EstudianteView)
+
+urlpatterns = router.urls

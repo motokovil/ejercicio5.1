@@ -4,7 +4,7 @@ from materias.models import Materia
 class Profesor(models.Model):
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=200)
-    clase = models.ForeignKey(Materia, on_delete=models.CASCADE)
+    clase = models.ForeignKey(Materia, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         self.nombre
